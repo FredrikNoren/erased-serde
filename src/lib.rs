@@ -125,12 +125,12 @@ mod alloc {
 #[macro_use]
 mod macros;
 
-mod any;
-mod de;
-mod error;
-mod features_check;
-mod map;
-mod ser;
+pub mod any;
+pub mod de;
+pub mod error;
+pub mod features_check;
+pub mod map;
+pub mod ser;
 
 pub use crate::de::{deserialize, Deserializer};
 pub use crate::error::{Error, Result};
