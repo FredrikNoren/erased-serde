@@ -251,7 +251,7 @@ impl Out {
         Out(unsafe { Any::new(t) })
     }
 
-    unsafe fn take<T>(self) -> T {
+    pub unsafe fn take<T>(self) -> T {
         unsafe { self.0.take() }
     }
 }
