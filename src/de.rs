@@ -258,7 +258,7 @@ impl Out {
 
 // IMPL ERASED SERDE FOR SERDE /////////////////////////////////////////////////
 
-mod erase {
+pub mod erase {
     pub struct DeserializeSeed<D> {
         pub(crate) state: Option<D>,
     }
