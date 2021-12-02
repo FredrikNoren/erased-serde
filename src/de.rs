@@ -296,7 +296,7 @@ pub mod erase {
     }
 
     pub struct SeqAccess<D> {
-        pub(crate) state: D,
+        pub state: D,
     }
 
     impl<D> SeqAccess<D> {
