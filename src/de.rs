@@ -258,6 +258,12 @@ impl Out {
 
 // IMPL ERASED SERDE FOR SERDE /////////////////////////////////////////////////
 
+pub fn create_deserialize_seed<D>() -> erase::DeserializeSeed<D> {
+    erase::DeserializeSeed::<D> {
+        state: None
+    }
+}
+
 mod erase {
     pub struct DeserializeSeed<D> {
         pub(crate) state: Option<D>,
