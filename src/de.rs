@@ -258,12 +258,6 @@ impl Out {
 
 // IMPL ERASED SERDE FOR SERDE /////////////////////////////////////////////////
 
-pub fn create_deserialize_seed<D>() -> erase::DeserializeSeed<D> {
-    erase::DeserializeSeed::<D> {
-        state: None
-    }
-}
-
 mod erase {
     pub struct DeserializeSeed<D> {
         pub(crate) state: Option<D>,
@@ -1450,14 +1444,14 @@ deref_erased_deserializer!(<'de, 'a, T: ?Sized + Deserializer<'de>> Deserializer
 
 // ERROR ///////////////////////////////////////////////////////////////////////
 
-fn erase<E>(e: E) -> Error
+pub fn erase<E>(e: E) -> Error
 where
     E: Display,
 {
     serde::de::Error::custom(e)
 }
 
-fn unerase<E>(e: Error) -> E
+pub fn unerase<E>(e: Error) -> E
 where
     E: serde::de::Error,
 {
