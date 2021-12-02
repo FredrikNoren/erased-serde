@@ -247,7 +247,7 @@ impl<'de> dyn Deserializer<'de> {
 pub struct Out(Any);
 
 impl Out {
-    unsafe fn new<T>(t: T) -> Self {
+    pub unsafe fn new<T>(t: T) -> Self {
         Out(unsafe { Any::new(t) })
     }
 
