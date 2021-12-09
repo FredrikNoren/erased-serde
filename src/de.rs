@@ -309,7 +309,7 @@ pub mod erase {
     }
 
     pub struct MapAccess<D> {
-        pub(crate) state: D,
+        pub state: D,
     }
 
     impl<D> MapAccess<D> {
